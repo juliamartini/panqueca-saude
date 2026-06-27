@@ -154,8 +154,8 @@
 
 <nav>
   <ul>
-    <li><button class="active" onclick="showTab('resumo',this)">Resumo</button></li>
-    <li><button onclick="showTab('rotina',this)">⏰ Rotina</button></li>
+    <li><button class="active" onclick="showTab('rotina',this)">⏰ Rotina</button></li>
+    <li><button onclick="showTab('resumo',this)">Resumo</button></li>
     <li><button onclick="showTab('medicacoes',this)">💊 Medicações</button></li>
     <li><button onclick="showTab('saude',this)">🩺 Saúde</button></li>
     <li><button onclick="showTab('exames',this)">🔬 Exames</button></li>
@@ -167,15 +167,8 @@
 <div class="content">
 
 <!-- RESUMO -->
-<div id="tab-resumo" class="tab-panel active">
+<div id="tab-resumo" class="tab-panel">
   <button class="print-btn" onclick="window.print()">🖨️ Imprimir / Exportar PDF</button>
-
-  <div class="alert-box">
-    <strong>⚠️ Dois probióticos prescritos — confirmar qual usar</strong>
-    Dra. Marina (15/06): Enterococcus faecium + L. acidophilus + B. bifidum + L. rhamnosus + S. boulardii + FOS.<br>
-    Dra. Carol (19/06): MAMPS — L-Acidophilus + L-Rhamnosus + L-Casei + Streptococcus.<br>
-    Cepas diferentes, possivelmente complementares. Confirmar com as duas vets.
-  </div>
 
   <div class="card">
     <h2>Alertas ativos</h2>
@@ -227,46 +220,77 @@
 </div>
 
 <!-- ROTINA -->
-<div id="tab-rotina" class="tab-panel">
+<div id="tab-rotina" class="tab-panel active">
   <div class="card">
-    <h2>Rotina de medicação diária</h2>
-    <div class="sched-grid">
-      <div class="sched-block">
-        <div class="sched-title">🌅 Manhã</div>
-        <div class="sched-item">Ograx 500mg <span>1 cápsula</span></div>
-        <div class="sched-item">Pregabalina 50mg <span>1 cápsula</span></div>
-        <div class="sched-item">Jiao Wei Xiao Yao San #64 <span>2 cápsulas</span></div>
-        <div class="sched-item">Rinossoro <span>1 jato/narina</span></div>
-        <div class="sched-item">Kalium+Pulmo 12CH <span>5 gotas</span></div>
-        <div class="sched-item">Psyllium <span>1 col. chá na ração</span></div>
-      </div>
-      <div class="sched-block">
-        <div class="sched-title">🌙 Noite</div>
-        <div class="sched-item">Ograx 500mg <span>1 cápsula</span></div>
-        <div class="sched-item">Pregabalina 50mg <span>1 cápsula</span></div>
-        <div class="sched-item">Fluoxetina 20mg <span>1 cápsula</span></div>
-        <div class="sched-item">Cannabis 8% FS <span>1 gota (30min depois)</span></div>
-        <div class="sched-item">Suan Zao Ren Tang #43 <span>2 cápsulas</span></div>
-        <div class="sched-item">Probiótico <span>1 cápsula ⚠️ verificar qual</span></div>
-        <div class="sched-item">Nutraceutico complexo <span>1 cápsula</span></div>
-        <div class="sched-item">Kalium+Pulmo 12CH <span>5 gotas</span></div>
-      </div>
-      <div class="sched-block">
-        <div class="sched-title">☀️ Meio-dia</div>
-        <div class="sched-item">Kalium+Pulmo 12CH <span>5 gotas</span></div>
-      </div>
-      <div class="sched-block">
-        <div class="sched-title">⚡ SOS / Situacional</div>
-        <div class="sched-item">Trazodona 100mg <span>2h antes de eventos difíceis</span></div>
-        <div class="sched-item">Spray Neem <span>ao sair ao ar livre</span></div>
-        <div class="sched-item">Biocanis <span>crise GI leve</span></div>
-        <div class="sched-item">Giardicid 500mg <span>crise GI grave</span></div>
-        <div class="sched-item">Auritop <span>secreção no ouvido (7 dias 2x)</span></div>
-      </div>
+    <h2>Manhã</h2>
+
+    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">🧺 Na caixinha de remédios</div>
+    <div class="sched-block" style="margin-bottom:10px;">
+      <div class="sched-item">🐟 Ograx <span>1 "peixinho"</span></div>
+      <div class="sched-item">Pregabalina <span>1 cápsula</span></div>
+      <div class="sched-item">Pós-biótico · Corebiome+Biointestil <span>1 dose (2 cápsulas)</span></div>
     </div>
-    <div style="margin-top:10px; font-size:12px; color:#888; font-style:italic; line-height:1.6;">
-      🐕 Coleira Erva Santa Maria: usar no pescoço continuamente (trocar a cada 4 meses).<br>
-      🧹 Limpeza das orelhas: Surossolve + lenço de dedo, 1x por semana.
+
+    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">📦 Fora da caixinha</div>
+    <div class="sched-block" style="margin-bottom:10px;">
+      <div class="sched-item">🧊 Prebiótico (geladeira) <span>1 cápsula</span></div>
+      <div class="sched-item">Rinossoro <span>1 jato/narina</span></div>
+      <div class="sched-item">Homeopatia · Kalium+Pulmo <span>5 glóbulos</span></div>
+      <div class="sched-item">🌾 Psyllium na comida pastosa <span>1 col. chá · ⚠️ ~1h após remédios</span></div>
+    </div>
+
+    <div style="font-size:11px;font-weight:700;color:#c87000;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">⏳ Ainda não chegou (vindo de Santos)</div>
+    <div class="sched-block" style="margin-bottom:4px; opacity:0.65;">
+      <div class="sched-item">Jiao Wei Xiao Yao San #64 <span>2 cápsulas</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Meio-dia</h2>
+    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">📦 Fora da caixinha</div>
+    <div class="sched-block">
+      <div class="sched-item">Homeopatia · Kalium+Pulmo <span>5 glóbulos</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Noite</h2>
+
+    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">🧺 Na caixinha de remédios</div>
+    <div class="sched-block" style="margin-bottom:10px;">
+      <div class="sched-item">🐟 Ograx <span>1 "peixinho"</span></div>
+      <div class="sched-item">Pregabalina <span>1 cápsula</span></div>
+      <div class="sched-item">Fluoxetina <span>1 cápsula</span></div>
+      <div class="sched-item">Parabiótico · Biomamps <span>1 cápsula</span></div>
+      <div class="sched-item">Nutraceutico complexo <span>1 dose (3 cápsulas)</span></div>
+    </div>
+
+    <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">📦 Fora da caixinha</div>
+    <div class="sched-block" style="margin-bottom:10px;">
+      <div class="sched-item">Homeopatia · Kalium+Pulmo <span>5 glóbulos</span></div>
+    </div>
+
+    <div style="font-size:11px;font-weight:700;color:#c87000;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;">⏳ Ainda não chegou (vindo de Santos)</div>
+    <div class="sched-block" style="margin-bottom:4px; opacity:0.65;">
+      <div class="sched-item">Suan Zao Ren Tang #43 <span>2 cápsulas</span></div>
+      <div class="sched-item">🌿 Cannabis 8% FS <span>1 gota · 30 min após as outras meds</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>SOS / Situacional</h2>
+    <div class="sched-block">
+      <div class="sched-item">Trazodona 100mg <span>2h antes de eventos difíceis</span></div>
+      <div class="sched-item">Spray Neem <span>ao sair ao ar livre</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Lembretes fixos</h2>
+    <div class="sched-block">
+      <div class="sched-item">🐕 Coleira Erva Santa Maria <span>uso contínuo · trocar a cada 4 meses</span></div>
+      <div class="sched-item">🦷 Escovação de dentes <span>1x/semana</span></div>
+      <div class="sched-item">👂 Limpeza das orelhas <span>lenço de dedo · 1x/semana</span></div>
     </div>
   </div>
 </div>
@@ -362,26 +386,25 @@
     <div class="med-item new">
       <div class="med-icon">🦠</div>
       <div>
-        <div class="med-name">Probiótico MAMPS <span class="badge b-new">Novo · Dra. Carol</span></div>
+        <div class="med-name">Parabiótico · Biomamps (MAMPS) <span class="badge b-new">Dra. Carol</span></div>
         <div class="med-dose">1 cápsula · noite · 4 meses</div>
         <div class="med-obs">L-Acidophilus + L-Rhamnosus + L-Casei + Streptococcus (10mg cada)</div>
-        <div class="med-status">✅ Comprado</div><div class="med-warn">⚠️ Aguardando confirmação das vets: cepas distintas das de Dra. Marina — possivelmente complementares</div>
+        <div class="med-status">✅ Comprado</div>
       </div>
     </div>
     <div class="med-item">
       <div class="med-icon">🦠</div>
       <div>
-        <div class="med-name">Probiótico Manipulado <span class="badge b-sup">Dra. Marina · 15/06</span></div>
-        <div class="med-dose">1 cápsula · noite · 3 meses</div>
-        <div class="med-obs">Enterococcus faecium 3bi + L. acidophilus 2bi + B. bifidum 2bi + L. rhamnosus 1bi + S. boulardii 1bi + FOS 150mg</div>
-        <div class="med-warn">⚠️ Ver nota acima — confirmar com vets qual usar</div>
+        <div class="med-name">Prebiótico · Fórmula manipulada <span class="badge b-sup">Dra. Marina</span></div>
+        <div class="med-dose">1 cápsula · manhã · até acabar o pote · refrigerado</div>
+        <div class="med-obs">Enterococcus faecium 3bi + L. acidophilus 2bi + B. bifidum 2bi + L. rhamnosus 1bi + S. boulardii 1bi + FOS 150mg · Manter refrigerado</div>
       </div>
     </div>
     <div class="med-item new">
       <div class="med-icon">💊</div>
       <div>
-        <div class="med-name">Nutraceutico Complexo <span class="badge b-new">Novo · Dra. Carol</span></div>
-        <div class="med-dose">1 cápsula ao dia · 12 meses</div>
+        <div class="med-name">Nutraceutico Complexo <span class="badge b-new">Dra. Carol</span></div>
+        <div class="med-dose">1 dose (3 cápsulas fracionadas) · noite · 12 meses</div>
         <div class="med-obs">Ashwagandha 200mg + Passiflora 190mg + Valeriana 190mg + Rhodiola Rosea 80mg + Melatonina 6mg + Lactoferrina 190mg + Vit A 7.600UI + Vit C 200mg + Triptofano 190mg</div>
         <div class="med-status">✅ Comprado</div>
       </div>
@@ -389,7 +412,7 @@
     <div class="med-item new">
       <div class="med-icon">🌾</div>
       <div>
-        <div class="med-name">Psyllium <span class="badge b-new">Novo · Dra. Carol</span></div>
+        <div class="med-name">Psyllium <span class="badge b-new">Dra. Carol</span></div>
         <div class="med-dose">1 colher de chá ao dia · misturar na ração</div>
         <div class="med-obs">Prebiótico — suporte à microbiota intestinal</div>
       </div>
@@ -489,33 +512,33 @@
 <div id="tab-exames" class="tab-panel">
   <div class="card">
     <h2>Exames disponíveis em PDF — clique para abrir</h2>
-    <div class="exam-item"><div class="exam-date">19/06/2026</div><div><div class="exam-name"><a href="./exames/20260619_SolicitacaoExame_CalcidiolD_DraCarol.pdf" target="_blank">📄 Solicitação Vitamina D3 (Calcidiol 25D) — Dra. Carol</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">22/01/2026</div><div><div class="exam-name"><a href="./exames/20260122_Parasitol%C3%B3gico_Panqueca.pdf" target="_blank">📄 Parasitológico de fezes</a></div><div class="exam-result r-ok">✓ Negativo</div></div></div>
-    <div class="exam-item"><div class="exam-date">24/11/2025</div><div><div class="exam-name"><a href="./exames/20251124_Panqueca_Ultrassom.pdf" target="_blank">📄 Ultrassom abdominal</a></div><div class="exam-result r-alert">⚠️ Colelitíase (pedra 0,73cm) + lama biliar + enterite leve</div></div></div>
-    <div class="exam-item"><div class="exam-date">24/11/2025</div><div><div class="exam-name"><a href="./exames/20251124_Panqueca_Hemograma.pdf" target="_blank">📄 Hemograma</a></div><div class="exam-result r-ok">✓ Normal</div></div></div>
-    <div class="exam-item"><div class="exam-date">24/11/2025</div><div><div class="exam-name"><a href="./exames/20251124_Panqueca_Bioquímico.pdf" target="_blank">📄 Bioquímico sérico</a></div><div class="exam-result r-ok">✓ Normal (Ureia 40,8 · Creatinina 1,11 · ALT 33,4 · FA 62,6 · Glicose 103,4)</div></div></div>
-    <div class="exam-item"><div class="exam-date">24/11/2025</div><div><div class="exam-name"><a href="./exames/20251124_Panqueca_Cinomose.pdf" target="_blank">📄 Kit Cinomose (Ac)</a></div><div class="exam-result r-ok">✓ Não reagente</div></div></div>
-    <div class="exam-item"><div class="exam-date">03/06/2025</div><div><div class="exam-name"><a href="./exames/20250603_Panqueca_Fezes.pdf" target="_blank">📄 Parasitológico de fezes</a></div><div class="exam-result r-ok">✓ Negativo</div></div></div>
-    <div class="exam-item"><div class="exam-date">12/03/2025</div><div><div class="exam-name"><a href="./exames/20250312_Panqueca_Fezes.PDF" target="_blank">📄 Parasitológico de fezes</a></div><div class="exam-result r-alert">⚠️ Giárdia positiva</div></div></div>
-    <div class="exam-item"><div class="exam-date">06/03/2025</div><div><div class="exam-name"><a href="./exames/20250306_Panqueca_Hemograma%20Completo.pdf" target="_blank">📄 Hemograma completo</a></div><div class="exam-result r-ok">✓ Normal</div></div></div>
-    <div class="exam-item"><div class="exam-date">19/02/2025</div><div><div class="exam-name"><a href="./exames/20250219_Panqueca_Desbiose.pdf" target="_blank">📄 Painel Disbiose (qPCR)</a></div><div class="exam-result r-ok">✓ Eubiose intestinal (normal) — Stonewell</div></div></div>
-    <div class="exam-item"><div class="exam-date">fev/2024</div><div><div class="exam-name"><a href="./exames/2024024_Panqueca_Painel%20Desbiose.pdf" target="_blank">📄 Painel Disbiose</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">19/12/2023</div><div><div class="exam-name"><a href="./exames/20231219_Exames%20Panqueca_Rino%20Tomo%20Cultura%20Sangue.pdf" target="_blank">📄 Rinoscopia + Tomografia + ECG + Cultura nasal</a></div><div class="exam-result r-info">ℹ️ Apenas rinite — sem corpo estranho ou fungo — Dra. Cíntia</div></div></div>
-    <div class="exam-item"><div class="exam-date">27/11/2023</div><div><div class="exam-name"><a href="./exames/20231127_PedidoExames_DraCintia.pdf" target="_blank">📄 Pedido de exames — Dra. Cíntia</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">03/08/2023</div><div><div class="exam-name"><a href="./exames/20230803_Exames%20Panqueca_Sangue.pdf" target="_blank">📄 Exames de sangue</a></div><div class="exam-result r-ok">✓ Rotina</div></div></div>
-    <div class="exam-item"><div class="exam-date">09/11/2022</div><div><div class="exam-name"><a href="./exames/20221109_Exames%20Panqueca_RX.pdf" target="_blank">📄 RX tórax + crânio LL/VD (com sedação)</a></div><div class="exam-result r-info">ℹ️ Avaliação cavidade nasal — Dra. Lígia</div></div></div>
-    <div class="exam-item"><div class="exam-date">20/07/2022</div><div><div class="exam-name"><a href="./exames/20220720_Exames%20Panqueca_Sangue%20e%20RX.pdf" target="_blank">📄 Sangue + RX</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">23/12/2021</div><div><div class="exam-name"><a href="./exames/20211223_Sangue%20e%20US.pdf" target="_blank">📄 Sangue + Ultrassom (internação)</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">17/11/2021</div><div><div class="exam-name"><a href="./exames/20211117%20Sangue%20PCR%20e%20Ultrassom.pdf" target="_blank">📄 Sangue + PCR + Ultrassom</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">12/11/2021</div><div><div class="exam-name"><a href="./exames/20211112_Sangue.pdf" target="_blank">📄 Sangue + hormonal</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">04/08/2021</div><div><div class="exam-name"><a href="./exames/20210804_Panqueca_Sangue%20e%20ultrassom.pdf" target="_blank">📄 Sangue + Ultrassom</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">02/01/2021</div><div><div class="exam-name"><a href="./exames/20210102_Exame_Panqueca_Giardia.pdf" target="_blank">📄 Giárdia (day care)</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">25/12/2020</div><div><div class="exam-name"><a href="./exames/20201225%20-%20Ultrassom%20Panqueca%20Com%20imagens.pdf" target="_blank">📄 Ultrassom (engoliu pano de pia)</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">14/12/2020</div><div><div class="exam-name"><a href="./exames/20201214_Exames_Panqueca.pdf" target="_blank">📄 Exames castração</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">23/10/2020</div><div><div class="exam-name"><a href="./exames/20201023_Exames_Panqueca%20.pdf" target="_blank">📄 Exames pré-castração</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">30/06/2020</div><div><div class="exam-name"><a href="./exames/20200630_Ultrassom%20Panqueca%20.pdf" target="_blank">📄 Ultrassom (engoliu brinquedo)</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">04/06/2020</div><div><div class="exam-name"><a href="./exames/20200604_Exames_Panqueca.pdf" target="_blank">📄 Hemograma controle (pós-carrapato)</a></div></div></div>
-    <div class="exam-item"><div class="exam-date">02/06/2020</div><div><div class="exam-name"><a href="./exames/20200602_Exames_Panqueca.pdf" target="_blank">📄 Exames doença do carrapato</a></div></div></div>
+    <div class="exam-item"><div class="exam-date">19/06/2026</div><div><div class="exam-name">📄 Solicitação Vitamina D3 (Calcidiol 25D) — Dra. Carol</div></div></div>
+    <div class="exam-item"><div class="exam-date">22/01/2026</div><div><div class="exam-name">📄 Parasitológico de fezes</div><div class="exam-result r-ok">✓ Negativo</div></div></div>
+    <div class="exam-item"><div class="exam-date">24/11/2025</div><div><div class="exam-name">📄 Ultrassom abdominal</div><div class="exam-result r-alert">⚠️ Colelitíase (pedra 0,73cm) + lama biliar + enterite leve</div></div></div>
+    <div class="exam-item"><div class="exam-date">24/11/2025</div><div><div class="exam-name">📄 Hemograma</div><div class="exam-result r-ok">✓ Normal</div></div></div>
+    <div class="exam-item"><div class="exam-date">24/11/2025</div><div><div class="exam-name">📄 Bioquímico sérico</div><div class="exam-result r-ok">✓ Normal (Ureia 40,8 · Creatinina 1,11 · ALT 33,4 · FA 62,6 · Glicose 103,4)</div></div></div>
+    <div class="exam-item"><div class="exam-date">24/11/2025</div><div><div class="exam-name">📄 Kit Cinomose (Ac)</div><div class="exam-result r-ok">✓ Não reagente</div></div></div>
+    <div class="exam-item"><div class="exam-date">03/06/2025</div><div><div class="exam-name">📄 Parasitológico de fezes</div><div class="exam-result r-ok">✓ Negativo</div></div></div>
+    <div class="exam-item"><div class="exam-date">12/03/2025</div><div><div class="exam-name">📄 Parasitológico de fezes</div><div class="exam-result r-alert">⚠️ Giárdia positiva</div></div></div>
+    <div class="exam-item"><div class="exam-date">06/03/2025</div><div><div class="exam-name">📄 Hemograma completo</div><div class="exam-result r-ok">✓ Normal</div></div></div>
+    <div class="exam-item"><div class="exam-date">19/02/2025</div><div><div class="exam-name">📄 Painel Disbiose (qPCR)</div><div class="exam-result r-ok">✓ Eubiose intestinal (normal) — Stonewell</div></div></div>
+    <div class="exam-item"><div class="exam-date">fev/2024</div><div><div class="exam-name">📄 Painel Disbiose</div></div></div>
+    <div class="exam-item"><div class="exam-date">19/12/2023</div><div><div class="exam-name">📄 Rinoscopia + Tomografia + ECG + Cultura nasal</div><div class="exam-result r-info">ℹ️ Apenas rinite — sem corpo estranho ou fungo — Dra. Cíntia</div></div></div>
+    <div class="exam-item"><div class="exam-date">27/11/2023</div><div><div class="exam-name">📄 Pedido de exames — Dra. Cíntia</div></div></div>
+    <div class="exam-item"><div class="exam-date">03/08/2023</div><div><div class="exam-name">📄 Exames de sangue</div><div class="exam-result r-ok">✓ Rotina</div></div></div>
+    <div class="exam-item"><div class="exam-date">09/11/2022</div><div><div class="exam-name">📄 RX tórax + crânio LL/VD (com sedação)</div><div class="exam-result r-info">ℹ️ Avaliação cavidade nasal — Dra. Lígia</div></div></div>
+    <div class="exam-item"><div class="exam-date">20/07/2022</div><div><div class="exam-name">📄 Sangue + RX</div></div></div>
+    <div class="exam-item"><div class="exam-date">23/12/2021</div><div><div class="exam-name">📄 Sangue + Ultrassom (internação)</div></div></div>
+    <div class="exam-item"><div class="exam-date">17/11/2021</div><div><div class="exam-name">📄 Sangue + PCR + Ultrassom</div></div></div>
+    <div class="exam-item"><div class="exam-date">12/11/2021</div><div><div class="exam-name">📄 Sangue + hormonal</div></div></div>
+    <div class="exam-item"><div class="exam-date">04/08/2021</div><div><div class="exam-name">📄 Sangue + Ultrassom</div></div></div>
+    <div class="exam-item"><div class="exam-date">02/01/2021</div><div><div class="exam-name">📄 Giárdia (day care)</div></div></div>
+    <div class="exam-item"><div class="exam-date">25/12/2020</div><div><div class="exam-name">📄 Ultrassom (engoliu pano de pia)</div></div></div>
+    <div class="exam-item"><div class="exam-date">14/12/2020</div><div><div class="exam-name">📄 Exames castração</div></div></div>
+    <div class="exam-item"><div class="exam-date">23/10/2020</div><div><div class="exam-name">📄 Exames pré-castração</div></div></div>
+    <div class="exam-item"><div class="exam-date">30/06/2020</div><div><div class="exam-name">📄 Ultrassom (engoliu brinquedo)</div></div></div>
+    <div class="exam-item"><div class="exam-date">04/06/2020</div><div><div class="exam-name">📄 Hemograma controle (pós-carrapato)</div></div></div>
+    <div class="exam-item"><div class="exam-date">02/06/2020</div><div><div class="exam-name">📄 Exames doença do carrapato</div></div></div>
   </div>
   <div class="card">
     <h2>Vacinação</h2>
