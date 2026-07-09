@@ -124,8 +124,9 @@
   .print-btn:hover { background: #b08a50; }
 
   @media print {
-    nav, .print-btn { display: none; }
-    .tab-panel { display: block !important; }
+    nav, .print-btn, .no-print { display: none; }
+    .tab-panel { display: none !important; }
+    .tab-panel.print-active { display: block !important; }
     .header { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
     body { background: white; }
     .card { break-inside: avoid; }
@@ -302,6 +303,9 @@
       <div class="sched-item">📦 Caixa de papelão <span>Oferecer a comida da noite em uma caixa que ela possa rasgar</span></div>
       <div class="sched-item">🦴 Petisco de roer <span>1 por dia</span></div>
     </div>
+  </div>
+  <div class="no-print" style="text-align:center; padding: 8px 0 4px;">
+    <button onclick="printRotina()" style="background:none; border:1px solid #ddd; border-radius:8px; padding:7px 16px; font-size:12px; color:#aaa; cursor:pointer;">🖨️ Imprimir rotina</button>
   </div>
 </div>
 
@@ -630,6 +634,13 @@ const TYPE_CLASS = {
   "Sintoma":"lt-sintoma","Vacina":"lt-vacina","Vermifugação":"lt-verm",
   "Reação":"lt-reacao","Internação":"lt-intern","Receita":"lt-receita"
 };
+
+function printRotina() {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('print-active'));
+  document.getElementById('tab-rotina').classList.add('print-active');
+  window.print();
+  setTimeout(() => document.getElementById('tab-rotina').classList.remove('print-active'), 1000);
+}
 
 function fmtDate(d) {
   const [y,m,dd] = d.split('-');
