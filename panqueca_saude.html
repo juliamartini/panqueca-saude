@@ -96,6 +96,7 @@
   .lt-intern   { background: #ffe8e8; color: #900; }
   .lt-receita  { background: #fef0ff; color: #8020a0; }
   .lt-outro    { background: #f0f0f0; color: #888; }
+  .lt-adest    { background: #e8f8f0; color: #1a7a50; }
   .log-desc { font-size: 13px; color: #2d2d2d; line-height: 1.5; }
 
   /* Schedule */
@@ -653,6 +654,8 @@ function showTab(id, btn) {
 
 const LOG = [{"d":"2026-07-22","desc":"Resultado Calcidiol 25D: 36,6 ng/ml — deficiente. Dra. Carol orientou suplementar com Dossvet 7 gotas/dia e repetir exame em 3 meses.","tipo":"Exame"},
 {"d":"2026-07-24","desc":"Dra. Carol respondeu atualização: aumentar Cannabis para 3 gotas 2x/dia (manhã e noite).","tipo":"Consulta"},
+{"d":"2026-08-12","desc":"Segunda sessão de adestramento comportamental, somente com o treinador Lucas.","tipo":"Adestramento"},
+{"d":"2026-08-03","desc":"Primeiro adestramento comportamental com a adestradora Giuliana.","tipo":"Adestramento"},
 {"d":"2026-07-26","desc":"Início das ervas chinesas: Jiao Wei Xiao Yao San #64 (2 cáps. manhã) e Suan Zao Ren Tang #43 (2 cáps. noite). Chegaram de Santos nessa semana.","tipo":"Medicação"},
 {"d":"2026-07-22","desc":"Mordeu a Lívia à noite, sem estímulo específico identificado.","tipo":"Sintoma"},
 {"d":"2026-07-22","desc":"Colheita de sangue para exame de Vitamina D (Calcidiol 25D). Aguardando resultado.","tipo":"Exame"},
@@ -664,7 +667,7 @@ const LOG = [{"d":"2026-07-22","desc":"Resultado Calcidiol 25D: 36,6 ng/ml — d
 const TYPE_CLASS = {
   "Consulta":"lt-consulta","Exame":"lt-exame","Medicação":"lt-medic",
   "Sintoma":"lt-sintoma","Vacina":"lt-vacina","Vermifugação":"lt-verm",
-  "Reação":"lt-reacao","Internação":"lt-intern","Receita":"lt-receita"
+  "Reação":"lt-reacao","Internação":"lt-intern","Receita":"lt-receita","Adestramento":"lt-adest"
 };
 
 function printRotina() {
@@ -681,7 +684,7 @@ function fmtDate(d) {
 }
 
 const container = document.getElementById('log-container');
-LOG.forEach(item => {
+[...LOG].sort((a,b) => b.d.localeCompare(a.d)).forEach(item => {
   const tc = item.tipo ? (TYPE_CLASS[item.tipo] || 'lt-outro') : '';
   const tipoBadge = item.tipo ? `<div class="log-tipo ${tc}">${item.tipo}</div>` : '';
   container.innerHTML += `
